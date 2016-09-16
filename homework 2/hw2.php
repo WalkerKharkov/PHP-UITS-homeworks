@@ -1,33 +1,33 @@
 <form method="post" action="hw2.php">
     <p>
-        <label>1. Enter number : </label>
+        <label>1. Enter number. It will be increased for 100 or decreased for 30 : </label>
         <input type="text" name="number1"/>
     </p>
     <p>
-        <label>2. Enter number : </label>
+        <label>2. Enter number. If it odd, it will be increased, else will be decreased: </label>
         <input type="text" name="number2"/>
     </p>
     <p>
-        <label>3. Enter number : </label>
+        <label>3. Enter number. If it more than 50, it will be increased... : </label>
         <input type="text" name="number3"/>
     </p>
     <p>
-        <label>4. Enter two numbers : </label>
+        <label>4. Enter two numbers. Biggest from them will be shown : </label>
         <input type="text" name="number4_1"/>
         <input type="text" name="number4_2"/>
     </p>
     <p>
-        <label>5. Enter two numbers : </label>
+        <label>5. Enter two numbers for check, is there a difference between them is 100 : </label>
         <input type="text" name="number5_1"/>
         <input type="text" name="number5_2"/>
     </p>
     <p>
-        <label>6. Enter two numbers : </label>
+        <label>6. Enter two numbers for check, is there a difference between them is less than 20 : </label>
         <input type="text" name="number6_1"/>
         <input type="text" name="number6_2"/>
     </p>
     <p>
-        <label>7. Enter number for view it in reverse order : </label>
+        <label>7. Enter number of month : </label>
         <input type="text" name="month"/>
     </p>
     <input type="submit" />
