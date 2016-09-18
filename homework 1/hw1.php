@@ -1,4 +1,4 @@
-<form method="post" action="hw1.php">
+<form method="post">
     <p>
         <label>1. Enter number for increase for 30% and 120% then : </label>
         <input type="text" name="number1"/>
@@ -26,7 +26,6 @@
 </form>
 <?php
 if(!empty($_POST)){
-    var_dump($_POST);
     $num1 = $_POST['number1'];
     echo "1. Number : $num1. Increase for 30% : " . ($num1 *= 1.3) . ". Increase for 120% then : " . $num1 * 2.2 . ".<br>";
     $num2 = $_POST['number2'];
@@ -45,5 +44,5 @@ if(!empty($_POST)){
     $num5_1 = $_POST['number5_1'];
     $num5_2 = $_POST['number5_2'];
     $num5_3 = $_POST['number5_3'];
-    echo "Numbers : $num5_1, $num5_2, $num5_3. Average : " . ($num5_1 + $num5_2 + $num5_3) / 3 . ".<br>";
+    echo "5. Numbers : $num5_1, $num5_2, $num5_3. Average : " . ($num5_1 + $num5_2 + $num5_3) / 3 . ".<br>";
 }
