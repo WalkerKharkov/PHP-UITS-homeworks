@@ -25,7 +25,8 @@
     <input type="submit" />
 </form>
 <?php
-if ($_SERVER['REQUEST_METHOD']=='POST'){
+if(!empty($_POST)){
+    var_dump($_POST);
     $num1 = $_POST['number1'];
     echo "1. Number : $num1. Increase for 30% : " . ($num1 *= 1.3) . ". Increase for 120% then : " . $num1 * 2.2 . ".<br>";
     $num2 = $_POST['number2'];
