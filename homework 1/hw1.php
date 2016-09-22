@@ -1,26 +1,26 @@
 <form method="post">
     <p>
         <label>1. Enter number for increase for 30% and 120% then : </label>
-        <input type="text" name="number1"/>
+        <input type="text" name="number1" pattern="^[ 0-9]+$" required/>
     </p>
     <p>
         <label>2. Enter number for replacing middle char to zero : </label>
-        <input type="text" name="number2"/>
+        <input type="text" name="number2" pattern="^[ 0-9]+$" required/>
     </p>
     <p>
         <label>3. Enter two numbers to find squares sum : </label>
-        <input type="text" name="number3_1"/>
-        <input type="text" name="number3_2"/>
+        <input type="text" name="number3_1" pattern="^[ 0-9]+$" required/>
+        <input type="text" name="number3_2" pattern="^[ 0-9]+$" required/>
     </p>
     <p>
         <label>4. Enter number for view it in reverse order : </label>
-        <input type="text" name="number4"/>
+        <input type="text" name="number4" pattern="^[ 0-9]+$" required/>
     </p>
     <p>
         <label>5. Enter three numbers for find average : </label>
-        <input type="text" name="number5_1"/>
-        <input type="text" name="number5_2"/>
-        <input type="text" name="number5_3"/>
+        <input type="text" name="number5_1" pattern="^[ 0-9]+$" required/>
+        <input type="text" name="number5_2" pattern="^[ 0-9]+$" required/>
+        <input type="text" name="number5_3" pattern="^[ 0-9]+$" required/>
     </p>
     <input type="submit" />
 </form>
