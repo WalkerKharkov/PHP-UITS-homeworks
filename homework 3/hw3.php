@@ -81,7 +81,7 @@ for ($i = 0; $i <= 100; $i++){
 echo "<br>task12<br><br>";
 $i = 1000;
 $num = 0;
-while ($i >+ 50){
+while ($i >= 50){
     $i /= 2;
     $num++;
 }
