@@ -1,6 +1,6 @@
 <form method="post">
     <label>Enter date (dd.mm.yyyy hh.mm) : </label>
-    <input name="date" type="text" >
+    <input name="date" type="text" required>
     <br>
     <label>Enter email : </label>
     <input name="email" type="text" required>
@@ -26,28 +26,20 @@ if (!empty($_POST)){
                      "November" => "Ноября",
                      "December" => "Декабря");
     $holidays = array("01-01", "02-01", "07-01", "23-02", "08-03", "01-05", "02-05", "09-05", "23-08", "07-11");
+    $oneDay = 3600 * 24;
     $timestamp = strtotime($date);
     if (!$timestamp){
         echo "Date is not valid!<br>";
     }else{
-        $innerDate = getdate($timestamp);
-        $day = $innerDate['mday'];
-        $hours = $innerDate['hours'];
-        $day += ($hours >= 20) ? 2 : 1;
-        $deliveryTime = mktime($innerDate['hours'], $innerDate['minutes'], $innerDate['seconds'], $innerDate['mon'], $day, $innerDate['year']);
-        $delivery = getdate($deliveryTime);
-        $day = $delivery['mday'];
-        $month = $delivery['mon'];
+        $delivery = getdate($timestamp);
         $hours = $delivery['hours'];
-        $minutes = $delivery['minutes'];
-        $seconds = $delivery['seconds'];
-        $year = $delivery['year'];
-        $deliveryDay = date("d-m", $deliveryTime);
+        $timestamp += ($hours >= 20) ? 2 * $oneDay  : $oneDay;
+        $deliveryDay = date("d-m", $timestamp);
         while (in_array($deliveryDay, $holidays)){
-            $deliveryTime = mktime($hours, $minutes, $seconds, $month, ++$day, $year);
-            $delivery = getdate($deliveryTime);
-            $deliveryDay = date("d-m", $deliveryTime);
+            $timestamp += $oneDay;
+            $deliveryDay = date("d-m", $timestamp);
         }
+        $delivery = getdate($timestamp);
         foreach ($months as $key => $value){
             if ($delivery['month'] == $key){
                 $delivery['month'] = $value;
