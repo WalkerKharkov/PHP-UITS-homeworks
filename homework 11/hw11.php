@@ -7,10 +7,13 @@ class DB_framework {
     private $con;
     private static $instance;
 
-    public static function get_instance( $db_settings = array( 'host' => 'localhost',
-                                                                'user' => 'root',
-                                                                'password' => '',
-                                                                'database' => 'test' ) ){
+    public static function get_instance( $db_settings = array(
+            'host' => 'localhost',
+            'user' => 'root',
+            'password' => '',
+            'database' => 'test'
+            )
+        ){
         if( ! self::$instance ){
             self::$instance = new self( $db_settings );
         }
@@ -18,8 +21,7 @@ class DB_framework {
     }
 
     private function __construct( $db_settings ){
-        $this->con = new mysqli( $db_settings[ 'host' ], $db_settings[ 'user' ],
-                                        $db_settings[ 'password' ], $db_settings[ 'database' ] );
+        $this->con = new mysqli( $db_settings[ 'host' ], $db_settings[ 'user' ], $db_settings[ 'password' ], $db_settings[ 'database' ] );
         if( $this->con->connect_error ) {
             die( 'Failed to connect to MySQL: (' . $this->con->connect_errno . ') ' . $this->con->connect_error );
         }
@@ -93,25 +95,29 @@ echo '<br><br>------------------------------------- task 17 --------------------
 class Date_framework{
 
     private static $instance;
-    private $weekdays = array('Monday' => 'понедельник',
-                                'Tuesday' => 'вторник',
-                                'Wednesday' => 'среда',
-                                'Thursday' => 'четверг',
-                                'Friday' => 'пятница',
-                                'Saturday' => 'суббота',
-                                'Sunday' => 'воскресенье');
-    private $months = array("January" => "Январь",
-                            "February" => "Февраль",
-                            "March" => "Март",
-                            "April" => "Апрель",
-                            "May" => "Май",
-                            "June" => "Июнь",
-                            "July" => "Июль",
-                            "August" => "Август",
-                            "September" => "Сентябрь",
-                            "October" => "Октябрь",
-                            "November" => "Ноябрь",
-                            "December" => "Декабрь");
+    private $weekdays = array(
+        'Monday' => 'понедельник',
+        'Tuesday' => 'вторник',
+        'Wednesday' => 'среда',
+        'Thursday' => 'четверг',
+        'Friday' => 'пятница',
+        'Saturday' => 'суббота',
+        'Sunday' => 'воскресенье'
+    );
+    private $months = array(
+        "January" => "Январь",
+        "February" => "Февраль",
+        "March" => "Март",
+        "April" => "Апрель",
+        "May" => "Май",
+        "June" => "Июнь",
+        "July" => "Июль",
+        "August" => "Август",
+        "September" => "Сентябрь",
+        "October" => "Октябрь",
+        "November" => "Ноябрь",
+        "December" => "Декабрь"
+    );
 
     public $today;
     public $weekday;
@@ -244,10 +250,12 @@ class META_include{
 
 }
 
-$tags = array( 'charset' => 'UTF-8',
-                'keywords' => 'php, javascript, css',
-                'description' => 'homework',
-                'foo' => 'bar');
+$tags = array(
+    'charset' => 'UTF-8',
+    'keywords' => 'php, javascript, css',
+    'description' => 'homework',
+    'foo' => 'bar'
+);
 META_include::get_meta( 'test.html', $tags );
 
 // task 20
@@ -311,45 +319,85 @@ class FORM_creator{
 
 }
 
-$params = array( 'name' => 'test',
-                    'action' => '',
-                    'method' => 'get');
+$params = array(
+    'name' => 'test',
+    'action' => '',
+    'method' => 'get'
+);
 
-$elems = array( 'input' => array( 'label' => 'testinput: ',
-                                  'type' => 'text',
-                                  'name' => 'testinput' ),
-                'textarea' => array( 'label' => 'testtextarea: ',
-                                     'rows' => '10',
-                                     'cols' => '20',
-                                     'name' => 'testtextarea' ),
-                'select' => array( '0' => array( 'size' => '2',
-                                                 'label' => 'testselect: ',
-                                                 'multiple name' => 'testsel[]' ),
-                                   '1' => array( '0' => array( 'disabled' => '1',
-                                                               'value' => 'select item' ),
-                                                 '1' => array( 'value' => 'item1' ),
-                                                 '2' => array( 'selected' => '1',
-                                                               'value' => 'item2' ),
-                                                 '3' => array( 'value' => 'item3' ),
-                                                 '4' => array( 'value' => 'item4' ) ) ),
-                'checkbox' => array( '0' => array( 'label' => 'option1: ',
-                                                   'name' => 'option1',
-                                                   'value' => 'val1' ),
-                                     '1' => array( 'label' => 'option2: ',
-                                                   'name' => 'option2',
-                                                   'value' => 'val2' ),
-                                     '2' => array( 'label' => 'option3: ',
-                                                   'name' => 'option3',
-                                                   'value' => 'val3' ) ),
-                'radio' => array( '0' => array( 'label' => 'option1: ',
-                                                'name' => 'option',
-                                                'value' => 'val1' ),
-                                  '1' => array( 'label' => 'option2: ',
-                                                'name' => 'option',
-                                                'value' => 'val2' ),
-                                  '2' => array( 'label' => 'option3: ',
-                                                'name' => 'option',
-                                                'value' => 'val3' ) ) );
+$elems = array(
+    'input' => array(
+        'label' => 'testinput: ',
+        'type' => 'text',
+        'name' => 'testinput'
+    ),
+    'textarea' => array(
+        'label' => 'testtextarea: ',
+        'rows' => '10',
+        'cols' => '20',
+        'name' => 'testtextarea'
+    ),
+    'select' => array(
+        '0' => array(
+            'size' => '2',
+            'label' => 'testselect: ',
+            'multiple name' => 'testsel[]'
+        ),
+        '1' => array(
+            '0' => array(
+                'disabled' => '1',
+                'value' => 'select item'
+            ),
+            '1' => array(
+                'value' => 'item1'
+            ),
+            '2' => array(
+                'selected' => '1',
+                'value' => 'item2'
+            ),
+            '3' => array(
+                'value' => 'item3'
+            ),
+            '4' => array(
+                'value' => 'item4'
+            )
+        )
+    ),
+    'checkbox' => array(
+        '0' => array(
+            'label' => 'option1: ',
+            'name' => 'option1',
+            'value' => 'val1'
+        ),
+        '1' => array(
+            'label' => 'option2: ',
+            'name' => 'option2',
+            'value' => 'val2'
+        ),
+        '2' => array(
+            'label' => 'option3: ',
+            'name' => 'option3',
+            'value' => 'val3'
+        )
+    ),
+    'radio' => array(
+        '0' => array(
+            'label' => 'option1: ',
+            'name' => 'option',
+            'value' => 'val1'
+        ),
+        '1' => array(
+            'label' => 'option2: ',
+            'name' => 'option',
+            'value' => 'val2'
+        ),
+        '2' => array(
+            'label' => 'option3: ',
+            'name' => 'option',
+            'value' => 'val3'
+        )
+    )
+);
 
 echo FORM_creator::form_create( $params, $elems );
 
